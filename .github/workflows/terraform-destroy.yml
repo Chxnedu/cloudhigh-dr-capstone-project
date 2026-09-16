@@ -1,11 +1,16 @@
-name: 'Terraform Azure Deploy (Manual)'
+name: 'Terraform Azure Destroy (Manual)'
 
 on:
   workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "destroy" to confirm you want to tear down infrastructure'
+        required: true
 
 jobs:
-  terraform:
+  terraform-destroy:
     runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'destroy'
     defaults:
       run:
         working-directory: terraform
@@ -31,8 +36,8 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Terraform Plan Destroy
+        run: terraform plan -destroy
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
