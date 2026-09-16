@@ -13,7 +13,7 @@ variable "plan_name" {
 variable "webapp_name" {
   description = "Name of your EXISTING Web App"
   type        = string
-  default     = "77payment-app77"       # <-- e.g. "myapp-webapp" (must be globally unique in Azure)
+  default     = "payment-app"       # <-- e.g. "myapp-webapp" (must be globally unique in Azure)
 }
 
 variable "node_version" {
