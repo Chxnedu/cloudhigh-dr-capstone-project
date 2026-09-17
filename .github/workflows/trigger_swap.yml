@@ -20,8 +20,8 @@ jobs:
         azcliversion: latest
         inlineScript: |
           # az account show
+          # --name payment-app \
           az webapp deployment slot swap \
             --resource-group DR-Readiness-CloudHigh \
-            # --name payment-app \
             --slot payment-app/standby \
             --target-slot production
