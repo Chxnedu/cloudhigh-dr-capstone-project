@@ -24,4 +24,4 @@ jobs:
             --resource-group DR-Readiness-CloudHigh \
             --name payment-app \
             --slot payment-app/standby \
-            --target-slot payment-app
+            --target-slot production
