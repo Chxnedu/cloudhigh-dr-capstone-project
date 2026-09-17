@@ -23,5 +23,5 @@ jobs:
           az webapp deployment slot swap \
             --resource-group DR-Readiness-CloudHigh \
             --name payment-app \
-            --slot payment-app/standby \
+            --slot standby \
             --target-slot production
