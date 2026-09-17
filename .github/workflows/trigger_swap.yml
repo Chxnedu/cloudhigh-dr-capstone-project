@@ -1,6 +1,5 @@
 name: Run App Service Swap with Azure CLI
-on: [push]
-     
+on: workflow_dispatch
 jobs: 
   test:
     permissions:
